@@ -18,7 +18,10 @@ class StudentResource extends Resource
 {
     protected static ?string $model = Student::class;
 
-    // ✅ NAVIGATION (pakai method biar tidak merah)
+    // =====================================
+    // NAVIGATION
+    // =====================================
+
     public static function getNavigationIcon(): ?string
     {
         return 'heroicon-o-users';
@@ -49,43 +52,48 @@ class StudentResource extends Resource
         return 4;
     }
 
-    protected static ?string $recordTitleAttribute = 'Student';
+    protected static ?string $recordTitleAttribute = 'namalengkap';
 
-    // =========================
+    // =====================================
     // FORM
-    // =========================
+    // =====================================
+
     public static function form(Schema $schema): Schema
     {
         return StudentForm::configure($schema);
     }
 
-    // =========================
+    // =====================================
     // INFOLIST
-    // =========================
+    // =====================================
+
     public static function infolist(Schema $schema): Schema
     {
         return StudentInfolist::configure($schema);
     }
 
-    // =========================
+    // =====================================
     // TABLE
-    // =========================
+    // =====================================
+
     public static function table(Table $table): Table
     {
         return StudentsTable::configure($table);
     }
 
-    // =========================
-    // RELATION
-    // =========================
+    // =====================================
+    // RELATIONS
+    // =====================================
+
     public static function getRelations(): array
     {
         return [];
     }
 
-    // =========================
+    // =====================================
     // PAGES
-    // =========================
+    // =====================================
+
     public static function getPages(): array
     {
         return [

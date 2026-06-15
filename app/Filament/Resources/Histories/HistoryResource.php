@@ -13,12 +13,15 @@ use App\Models\History;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 
 class HistoryResource extends Resource
 {
     protected static ?string $model = History::class;
 
-    // ✅ NAVIGATION (pakai method biar tidak merah)
+    // =========================
+    // NAVIGATION
+    // =========================
     public static function getNavigationIcon(): ?string
     {
         return 'heroicon-o-clock';
@@ -49,7 +52,7 @@ class HistoryResource extends Resource
         return 2;
     }
 
-    protected static ?string $recordTitleAttribute = 'History';
+    protected static ?string $recordTitleAttribute = 'content';
 
     // =========================
     // FORM
@@ -76,7 +79,7 @@ class HistoryResource extends Resource
     }
 
     // =========================
-    // RELATION
+    // RELATIONS
     // =========================
     public static function getRelations(): array
     {

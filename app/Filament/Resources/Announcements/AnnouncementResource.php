@@ -13,6 +13,8 @@ use App\Models\Announcement;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
+
 
 class AnnouncementResource extends Resource
 {

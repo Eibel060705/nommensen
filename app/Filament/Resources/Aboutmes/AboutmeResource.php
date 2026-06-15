@@ -13,12 +13,17 @@ use App\Models\Aboutme;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 
 class AboutmeResource extends Resource
 {
     protected static ?string $model = Aboutme::class;
 
-    // ✅ NAVIGATION (pakai method biar tidak merah)
+    protected static ?string $recordTitleAttribute = 'content';
+
+    // =========================
+    // NAVIGATION
+    // =========================
     public static function getNavigationIcon(): ?string
     {
         return 'heroicon-o-information-circle';
@@ -49,8 +54,6 @@ class AboutmeResource extends Resource
         return 1;
     }
 
-    protected static ?string $recordTitleAttribute = 'Aboutme';
-
     // =========================
     // FORM
     // =========================
@@ -76,7 +79,7 @@ class AboutmeResource extends Resource
     }
 
     // =========================
-    // RELATION
+    // RELATIONS
     // =========================
     public static function getRelations(): array
     {

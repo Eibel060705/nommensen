@@ -13,12 +13,15 @@ use App\Models\Visimisi;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 
 class VisimisiResource extends Resource
 {
     protected static ?string $model = Visimisi::class;
 
-    // ✅ NAVIGATION (pakai method biar tidak merah)
+    // =========================
+    // NAVIGATION
+    // =========================
     public static function getNavigationIcon(): ?string
     {
         return 'heroicon-o-eye';
@@ -49,7 +52,7 @@ class VisimisiResource extends Resource
         return 3;
     }
 
-    protected static ?string $recordTitleAttribute = 'Visimisi';
+    protected static ?string $recordTitleAttribute = 'visi';
 
     // =========================
     // FORM
@@ -76,7 +79,7 @@ class VisimisiResource extends Resource
     }
 
     // =========================
-    // RELATION
+    // RELATIONS
     // =========================
     public static function getRelations(): array
     {
