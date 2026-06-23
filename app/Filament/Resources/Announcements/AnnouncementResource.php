@@ -13,14 +13,11 @@ use App\Models\Announcement;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
-use Illuminate\Support\Str;
-
 
 class AnnouncementResource extends Resource
 {
     protected static ?string $model = Announcement::class;
 
-    // ✅ NAVIGATION (pakai method biar tidak merah)
     public static function getNavigationIcon(): ?string
     {
         return 'heroicon-o-megaphone';
@@ -51,43 +48,28 @@ class AnnouncementResource extends Resource
         return 1;
     }
 
-    protected static ?string $recordTitleAttribute = 'Announcement';
+    protected static ?string $recordTitleAttribute = 'title';
 
-    // =========================
-    // FORM
-    // =========================
     public static function form(Schema $schema): Schema
     {
         return AnnouncementForm::configure($schema);
     }
 
-    // =========================
-    // INFOLIST
-    // =========================
     public static function infolist(Schema $schema): Schema
     {
         return AnnouncementInfolist::configure($schema);
     }
 
-    // =========================
-    // TABLE
-    // =========================
     public static function table(Table $table): Table
     {
         return AnnouncementsTable::configure($table);
     }
 
-    // =========================
-    // RELATION
-    // =========================
     public static function getRelations(): array
     {
         return [];
     }
 
-    // =========================
-    // PAGES
-    // =========================
     public static function getPages(): array
     {
         return [

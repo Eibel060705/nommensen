@@ -18,20 +18,21 @@ class NewsResource extends Resource
 {
     protected static ?string $model = News::class;
 
-    // ✅ NAVIGATION (pakai method biar tidak merah)
+    protected static ?string $recordTitleAttribute = 'title';
+
     public static function getNavigationIcon(): ?string
     {
         return 'heroicon-o-newspaper';
     }
 
-    public static function getNavigationGroup(): ?string
-    {
-        return 'Publikasi';
-    }
-
     public static function getNavigationLabel(): string
     {
         return 'Berita';
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Publikasi';
     }
 
     public static function getModelLabel(): string
@@ -49,50 +50,33 @@ class NewsResource extends Resource
         return 2;
     }
 
-    protected static ?string $recordTitleAttribute = 'News';
-
-    // =========================
-    // FORM
-    // =========================
     public static function form(Schema $schema): Schema
     {
         return NewsForm::configure($schema);
     }
 
-    // =========================
-    // INFOLIST
-    // =========================
     public static function infolist(Schema $schema): Schema
     {
         return NewsInfolist::configure($schema);
     }
 
-    // =========================
-    // TABLE
-    // =========================
     public static function table(Table $table): Table
     {
         return NewsTable::configure($table);
     }
 
-    // =========================
-    // RELATION
-    // =========================
     public static function getRelations(): array
     {
         return [];
     }
 
-    // =========================
-    // PAGES
-    // =========================
     public static function getPages(): array
     {
         return [
-            'index' => ListNews::route('/'),
+            'index'  => ListNews::route('/'),
             'create' => CreateNews::route('/create'),
-            'view' => ViewNews::route('/{record}'),
-            'edit' => EditNews::route('/{record}/edit'),
+            'view'   => ViewNews::route('/{record}'),
+            'edit'   => EditNews::route('/{record}/edit'),
         ];
     }
 }
