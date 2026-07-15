@@ -13,44 +13,25 @@ class FooterForm
         return $schema
             ->components([
                 FileUpload::make('image')
-                    ->label('Logo Universitas')
                     ->image()
-                    ->disk('public')
-                    ->directory('footers')
-                    ->visibility('public')
                     ->required(),
-
+                TextInput::make('link_instagram')
+                    ->required(),
+                TextInput::make('link_youtube')
+                    ->required(),
+                TextInput::make('link_linkedin')
+                    ->required(),
+                TextInput::make('link_facebook')
+                    ->required(),
                 TextInput::make('alamat')
-                    ->label('Alamat Lengkap')
                     ->required(),
-
-                TextInput::make('link_gmaps')
-                    ->label('Link Google Maps')
-                    ->required(),
-
                 TextInput::make('email')
-                    ->label('Email')
+                    ->label('Email address')
                     ->email()
                     ->required(),
-
                 TextInput::make('wa')
-                    ->label('WhatsApp')
                     ->required(),
-
-                TextInput::make('link_instagram')
-                    ->label('Instagram')
-                    ->required(),
-
-                TextInput::make('link_youtube')
-                    ->label('YouTube')
-                    ->required(),
-
-                TextInput::make('link_linkedin')
-                    ->label('LinkedIn')
-                    ->required(),
-
-                TextInput::make('link_facebook')
-                    ->label('Facebook')
+                TextInput::make('link_gmaps')
                     ->required(),
             ]);
     }
