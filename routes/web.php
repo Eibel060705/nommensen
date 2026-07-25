@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LandingpageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,4 @@ Route::get('/dosen',      [LandingpageController::class, 'lectures'])->name('lec
 Route::get('/mahasiswa',  [LandingpageController::class, 'students'])->name('students');
 Route::get('/pengumuman', [LandingpageController::class, 'announcements'])->name('announcements');
 Route::get('/berita',     [LandingpageController::class, 'news'])->name('news');
+Route::get('/perpustakaan', [BookController::class, 'index']);

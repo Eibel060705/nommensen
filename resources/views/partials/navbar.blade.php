@@ -14,12 +14,48 @@
 
             {{-- MENU DESKTOP --}}
             <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-700">
-                <li><a href="{{ route('home') }}"          class="hover:text-blue-600 transition">Beranda</a></li>
-                <li><a href="{{ route('profile') }}"       class="hover:text-blue-600 transition">Profil</a></li>
-                <li><a href="{{ route('lectures') }}"      class="hover:text-blue-600 transition">Dosen</a></li>
-                <li><a href="{{ route('students') }}"      class="hover:text-blue-600 transition">Mahasiswa</a></li>
-                <li><a href="{{ route('announcements') }}" class="hover:text-blue-600 transition">Pengumuman</a></li>
-                <li><a href="{{ route('news') }}"          class="hover:text-blue-600 transition">Berita</a></li>
+                <li>
+                    <a href="{{ route('home') }}" class="hover:text-blue-600 transition">
+                        Beranda
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('profile') }}" class="hover:text-blue-600 transition">
+                        Profil
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('lectures') }}" class="hover:text-blue-600 transition">
+                        Dosen
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('students') }}" class="hover:text-blue-600 transition">
+                        Mahasiswa
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('announcements') }}" class="hover:text-blue-600 transition">
+                        Pengumuman
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('news') }}" class="hover:text-blue-600 transition">
+                        Berita
+                    </a>
+                </li>
+
+                {{-- MENU BARU --}}
+                <li>
+                    <a href="{{ url('/perpustakaan') }}" class="hover:text-blue-600 transition">
+                        Perpustakaan
+                    </a>
+                </li>
             </ul>
 
             {{-- CTA --}}
@@ -32,9 +68,14 @@
             <button @click="open = !open"
                     class="md:hidden p-2 rounded-md text-slate-700 hover:bg-slate-100"
                     aria-label="Toggle menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                     viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="h-6 w-6"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
                           d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
             </button>
@@ -43,12 +84,50 @@
         {{-- MENU MOBILE --}}
         <div x-show="open" x-cloak class="md:hidden pb-4">
             <ul class="flex flex-col gap-2 text-sm font-medium text-slate-700">
-                <li><a href="{{ route('home') }}"          class="block py-2 px-2 rounded hover:bg-slate-50">Beranda</a></li>
-                <li><a href="{{ route('profile') }}"       class="block py-2 px-2 rounded hover:bg-slate-50">Profil</a></li>
-                <li><a href="{{ route('lectures') }}"      class="block py-2 px-2 rounded hover:bg-slate-50">Dosen</a></li>
-                <li><a href="{{ route('students') }}"      class="block py-2 px-2 rounded hover:bg-slate-50">Mahasiswa</a></li>
-                <li><a href="{{ route('announcements') }}" class="block py-2 px-2 rounded hover:bg-slate-50">Pengumuman</a></li>
-                <li><a href="{{ route('news') }}"          class="block py-2 px-2 rounded hover:bg-slate-50">Berita</a></li>
+
+                <li>
+                    <a href="{{ route('home') }}" class="block py-2 px-2 rounded hover:bg-slate-50">
+                        Beranda
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('profile') }}" class="block py-2 px-2 rounded hover:bg-slate-50">
+                        Profil
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('lectures') }}" class="block py-2 px-2 rounded hover:bg-slate-50">
+                        Dosen
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('students') }}" class="block py-2 px-2 rounded hover:bg-slate-50">
+                        Mahasiswa
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('announcements') }}" class="block py-2 px-2 rounded hover:bg-slate-50">
+                        Pengumuman
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('news') }}" class="block py-2 px-2 rounded hover:bg-slate-50">
+                        Berita
+                    </a>
+                </li>
+
+                {{-- MENU BARU --}}
+                <li>
+                    <a href="{{ url('/perpustakaan') }}" class="block py-2 px-2 rounded hover:bg-slate-50">
+                        Perpustakaan
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>
